@@ -1,100 +1,193 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WELCOME VIET69</title>
-    <style>
-        body {
-            background-color: #111;
-            color: #f5f5f5;
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HỒ SƠ CẦU THỦ TIN HÓA PHÁP FC</title>
+  <style>
+    /* Nền tổng thể */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #e8f0ff, #ffffff 40%, #f0f8ff);
+      color: #222;
+    }
 
-        header {
-            background-color: #e60000;
-            padding: 30px 0;
-            font-size: 36px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            color: white;
-            text-shadow: 0 0 10px black;
-        }
+    header {
+      text-align: center;
+      padding: 35px 0;
+      color: #d60000;
+      font-size: 38px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      border-bottom: 3px solid #d60000;
+    }
 
-        section {
-            margin: 40px auto;
-            width: 80%;
-            max-width: 900px;
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px #444;
-        }
+    section {
+      width: 90%;
+      max-width: 1000px;
+      margin: 35px auto;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(8px);
+    }
 
-        h2 {
-            color: #ff4747;
-            border-bottom: 2px solid #ff4747;
-            padding-bottom: 5px;
-        }
+    h2 {
+      color: #d60000;
+      font-size: 24px;
+      text-transform: uppercase;
+      border-left: 6px solid #d60000;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
 
-        /* Giảm kích thước ảnh và video */
-        img, video {
-            width: 60%;
-            border-radius: 10px;
-            margin-top: 10px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    /* Ảnh và video */
+    img, video {
+      width: 60%;
+      max-width: 400px;
+      border-radius: 18px;
+      margin: 15px auto;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        footer {
-            margin-top: 40px;
-            background-color: #222;
-            padding: 15px;
-            color: #aaa;
-            font-size: 14px;
-        }
-    </style>
+    img:hover, video:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .info {
+      text-align: left;
+      font-size: 18px;
+      line-height: 1.8;
+      margin-left: 25%;
+    }
+
+    /* Chỉ số kỹ năng */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .stat-box {
+      background: linear-gradient(145deg, #ffffff, #f0f4ff);
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      font-weight: 600;
+      color: #333;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-4px);
+    }
+
+    .stat-box span {
+      display: block;
+      font-size: 22px;
+      color: #d60000;
+      margin-top: 5px;
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: rgba(255, 255, 255, 0.9);
+      border-top: 2px solid #d60000;
+      color: #444;
+      font-size: 14px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    a {
+      color: #d60000;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-    <header>WELCOME VIET69</header>
+  <header>HỒ SƠ CẦU THỦ TIN HÓA PHÁP FC</header>
 
-    <section>
-        <h2>NƠI GIÚP BẠN GIẢI TỎA CĂNG THẲNG</h2>
-        <p>NGƯỜI LỘ CLIP</p>
-        <img src="DSC_1857.jpg" alt="Ảnh giới thiệu VIET69">
-    </section>
+  <section>
+    <h2>Thông Tin Cầu Thủ</h2>
+    <img src="file:///C:/Users/HP/Pictures/DSC_1832.jpg" alt="Ảnh cầu thủ">
+    <div class="info">
+      <p><strong>Họ tên:</strong> Nguyễn Trí Đức</p>
+      <p><strong>Năm sinh:</strong> 2009</p>
+      <p><strong>Vị trí:</strong> Tiền đạo cánh</p>
+      <p><strong>Chiều cao:</strong> 1m60</p>
+      <p><strong>Cân nặng:</strong> 45kg</p>
+      <p><strong>Câu lạc bộ:</strong> TIN HÓA PHÁP FC</p>
+      <p><strong>Quốc tịch:</strong> Việt Nam</p>
+      <p><strong>Phong cách thi đấu:</strong> Tốc độ, dứt điểm, xử lý khéo léo</p>
+    </div>
+  </section>
 
-    <section>
-        <h2>Cựu học sinh nông trang lộ clip nhảy</h2>
-        <p>Tên : Bùi Quang Linh Ngày sinh 13/12/2009</p>
-        <video controls>
-            <source src="b74bed3f-2f8b-4603-b9c9-a3308bf02c5c.mp4" type="video/mp4">
-        </video>
-    </section>
+  <section>
+    <h2>Chỉ Số Kỹ Năng</h2>
+    <div class="stats">
+      <div class="stat-box">Tốc độ <span>90</span></div>
+      <div class="stat-box">Sút <span>90</span></div>
+      <div class="stat-box">Chuyền <span>85</span></div>
+      <div class="stat-box">Thể lực <span>70</span></div>
+      <div class="stat-box">Kỹ thuật <span>85</span></div>
+      <div class="stat-box">Phản xạ <span>60</span></div>
+    </div>
+  </section>
 
-    <section>
-        <h2>CÁC BẠN THÂN CỦA CHỦ CLIP</h2>
-        <img src="DSC_1823.jpg" alt="Nguyễ Văn Cường">
-        <img src="DSC_1866.jpg" alt="Phan Hoàng Minh">
-    </section>
+  <section>
+    <h2>Video Highlight</h2>
 
-    <section>
-        <h2>Liên hệ</h2>
-        <p>Email: caubedavang@gmail.com</p>
-        <a href="https://www.facebook.com/bql.131209" 
-           style="color:#ff4747;" 
-           target="_blank">https://www.facebook.com/bql.131209</a>
-    </section>
+    <!-- Video 1 -->
+    <video controls>
+      <source src="file:///C:/Users/HP/Downloads/Enter%20(1).mp4" type="video/mp4">
+     
+    </video>
 
-    <footer>
-        © 2025 VIET69 - Thiết kế bởi bạn
-    </footer>
+    <!-- Video 2 -->
+    <video controls>
+      <source src="file:///C:/Users/HP/Downloads/Enter.mp4" type="video/mp4">
+      
+    </video>
+
+    <p style="text-align:center;">Những pha xử lý kỹ thuật và bàn thắng đẳng cấp của cầu thủ.</p>
+  </section>
+
+  <section>
+    <h2>Trận đấu gần đây</h2>
+    <img src="file:///C:/Users/HP/Downloads/9c076f49-0d98-489a-a3a0-aa1ea70140d9.jfif" alt="Đồng đội 1">
+    <img src="file:///C:/Users/HP/Downloads/bdc3062e-3867-4db4-ab4b-3d97b672f03b.jfif">
+  </section>
+
+  <section>
+    <h2>Thông tin liên lạc cầu thủ </h2>
+    <p>Email: <a href="mailto:viet69fc@gmail.com">thpfc@gmail.com</a></p>
+    <p>Facebook: <a href="https://www.facebook.com/tri.uc.807625" target="_blank">facebook.com/thp</a></p>
+  </section>
+
+  <footer>
+    © 2025 VIET69 FC - Thiết kế bởi đội phát triển
+  </footer>
 
 </body>
 </html>
-
