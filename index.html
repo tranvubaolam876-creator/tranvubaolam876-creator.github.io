@@ -3,193 +3,262 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HỒ SƠ CẦU THỦ TIN HÓA PHÁP FC</title>
+  <title>WAG | HỒ SƠ TUYỂN THỦ</title>
   <style>
-    /* Nền tổng thể */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(135deg, #e8f0ff, #ffffff 40%, #f0f8ff);
-      color: #222;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #0a0f1a, #000);
+      color: #f5f5f5;
+      overflow-x: hidden;
     }
 
     header {
       text-align: center;
-      padding: 35px 0;
-      color: #d60000;
-      font-size: 38px;
-      font-weight: 800;
-      text-transform: uppercase;
+      padding: 50px 20px;
+      background: linear-gradient(90deg, #001f3f, #004dff);
+      box-shadow: 0 0 25px rgba(0, 119, 255, 0.6);
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      color: #00aaff;
       letter-spacing: 2px;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      border-bottom: 3px solid #d60000;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #00aaff;
     }
 
-    section {
-      width: 90%;
+    header p {
+      font-size: 1.1em;
+      color: #d9eaff;
+      opacity: 0.9;
+    }
+
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
       max-width: 1000px;
-      margin: 35px auto;
-      background: rgba(255, 255, 255, 0.9);
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 170, 255, 0.3);
       border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(8px);
+      box-shadow: 0 0 30px rgba(0, 170, 255, 0.3);
+      overflow: hidden;
+      transition: 0.3s;
     }
 
-    h2 {
-      color: #d60000;
-      font-size: 24px;
-      text-transform: uppercase;
-      border-left: 6px solid #d60000;
-      padding-left: 10px;
-      margin-bottom: 20px;
+    .profile:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 40px rgba(0, 170, 255, 0.5);
     }
 
-    /* Ảnh và video */
-    img, video {
-      width: 60%;
-      max-width: 400px;
-      border-radius: 18px;
-      margin: 15px auto;
-      display: block;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    img:hover, video:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    .info {
-      text-align: left;
-      font-size: 18px;
-      line-height: 1.8;
-      margin-left: 25%;
-    }
-
-    /* Chỉ số kỹ năng */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .stat-box {
-      background: linear-gradient(145deg, #ffffff, #f0f4ff);
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 15px;
+    .profile-img {
+      flex: 1 1 350px;
+      background: #000814;
       text-align: center;
+    }
+
+    .profile-img img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 15px #00aaff);
+    }
+
+    .profile-info {
+      flex: 1 1 400px;
+      padding: 40px;
+    }
+
+    .profile-info h2 {
+      color: #00aaff;
+      font-size: 2.3em;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px #00aaff;
+    }
+
+    /* Tên thật nổi bật */
+    .realname {
+      font-size: 1.2em;
+      color: #00ffff;
+      background: linear-gradient(90deg, rgba(0,255,255,0.2), rgba(0,123,255,0.2));
+      padding: 8px 15px;
+      border-radius: 8px;
+      display: inline-block;
+      box-shadow: 0 0 15px rgba(0,255,255,0.4);
+      text-shadow: 0 0 8px #00ffff;
+      letter-spacing: 1px;
       font-weight: 600;
-      color: #333;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease;
+      margin-bottom: 25px;
+      animation: pulse 2.5s infinite ease-in-out;
     }
 
-    .stat-box:hover {
-      transform: translateY(-4px);
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(0,255,255,0.4); }
+      50% { box-shadow: 0 0 30px rgba(0,170,255,0.8); }
     }
 
-    .stat-box span {
-      display: block;
-      font-size: 22px;
-      color: #d60000;
-      margin-top: 5px;
+    .profile-info p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .label {
+      color: #00ffff;
       font-weight: 700;
+      text-shadow: 0 0 8px #00ffff, 0 0 15px #007bff;
+      background: linear-gradient(90deg, rgba(0,255,255,0.1), rgba(0,123,255,0.1));
+      padding: 4px 8px;
+      border-radius: 5px;
+      border: 1px solid rgba(0,255,255,0.2);
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 8px #00ffff, 0 0 15px #007bff; }
+      50% { text-shadow: 0 0 15px #00ccff, 0 0 30px #00aaff; }
+    }
+
+    /* Phần combo */
+    .combo-section {
+      max-width: 1000px;
+      margin: 60px auto;
+      text-align: center;
+    }
+
+    .combo-section h2 {
+      color: #00aaff;
+      text-shadow: 0 0 10px #00aaff;
+      margin-bottom: 25px;
+      font-size: 1.8em;
+    }
+
+    .combo-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .combo-gallery img {
+      width: 230px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 2px solid rgba(0,170,255,0.5);
+      box-shadow: 0 0 20px rgba(0,170,255,0.4);
+      transition: 0.3s;
+    }
+
+    .combo-gallery img {
+  width: 230px;
+  height: 230px;
+  object-fit: contain; /* giữ nguyên tỉ lệ ảnh, không bị cắt */
+  background: rgba(0, 0, 0, 0.5); /* thêm nền tối sau ảnh cho đẹp */
+  border-radius: 15px;
+  border: 2px solid rgba(0,170,255,0.5);
+  box-shadow: 0 0 20px rgba(0,170,255,0.4);
+  transition: 0.3s;
+}
+
+    .highlight {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .highlight h2 {
+      color: #00aaff;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      text-shadow: 0 0 10px #00aaff;
+    }
+
+    video {
+      width: 80%;
+      max-width: 700px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0,170,255,0.6);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      background: rgba(255, 255, 255, 0.9);
-      border-top: 2px solid #d60000;
-      color: #444;
-      font-size: 14px;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+      padding: 25px;
+      background: #001f3f;
+      color: #aad4ff;
+      font-size: 0.9em;
+      margin-top: 50px;
+      box-shadow: 0 -2px 15px rgba(0,170,255,0.2);
     }
 
-    a {
-      color: #d60000;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    a:hover {
-      text-decoration: underline;
+    @media (max-width: 768px) {
+      .profile {
+        flex-direction: column;
+      }
+      .profile-info {
+        padding: 25px;
+      }
+      .combo-gallery img {
+        width: 150px;
+        height: 150px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>HỒ SƠ CẦU THỦ TIN HÓA PHÁP FC</header>
+  <header>
+    <h1>HỒ SƠ TUYỂN THỦ</h1>
+    <p>ANTI CỨNG ĐỘ MIXI VÀ TEAM REFUND GAMING</p>
+  </header>
 
-  <section>
-    <h2>Thông Tin Cầu Thủ</h2>
-    <img src="DSC_1832.jpg" alt="Ảnh cầu thủ">
-    <div class="info">
-      <p><strong>Họ tên:</strong> Nguyễn Trí Đức</p>
-      <p><strong>Năm sinh:</strong> 2009</p>
-      <p><strong>Vị trí:</strong> Tiền đạo cánh</p>
-      <p><strong>Chiều cao:</strong> 1m60</p>
-      <p><strong>Cân nặng:</strong> 45kg</p>
-      <p><strong>Câu lạc bộ:</strong> TIN HÓA PHÁP FC</p>
-      <p><strong>Quốc tịch:</strong> Việt Nam</p>
-      <p><strong>Phong cách thi đấu:</strong> Tốc độ, dứt điểm, xử lý khéo léo</p>
+  <section class="profile">
+    <div class="profile-img">
+      <img src="\f779180e-23d7-4359-a331-4fe991df8ce6.jfif" alt="Ảnh tuyển thủ">
+    </div>
+    <div class="profile-info">
+      <h2>CVE ANH TÚ</h2>
+      <div class="realname">Tên thật: Nguyễn Anh Tú</div>
+
+      <p><span class="label">Tuổi:</span> 15</p>
+      <p><span class="label">Vị trí:</span> RUSHER</p>
+      <p><span class="label">Phong cách chơi:</span> Tốc chiến, phản xạ cao, kĩ năng căng, tư duy chiến thuật nhạy bén.</p>
+      <p><span class="label">Thành tích nổi bật:</span> TOP 1 FREE FIRE K42 CHV (Tự Phong)</p>
+      <p><span class="label">Châm ngôn:</span> “THẰNG TÂY NGỒI CẠNH THẰNG TÀY / THẰNG TÂY BỎ VỢ THẰNG TÀY BỎ CHA” ⚡</p>
     </div>
   </section>
 
-  <section>
-    <h2>Chỉ Số Kỹ Năng</h2>
-    <div class="stats">
-      <div class="stat-box">Tốc độ <span>90</span></div>
-      <div class="stat-box">Sút <span>90</span></div>
-      <div class="stat-box">Chuyền <span>85</span></div>
-      <div class="stat-box">Thể lực <span>70</span></div>
-      <div class="stat-box">Kỹ thuật <span>85</span></div>
-      <div class="stat-box">Phản xạ <span>60</span></div>
+  <!-- Combo Súng -->
+  <section class="combo-section">
+    <h2>🔫 Combo Súng Yêu Thích</h2>
+    <div class="combo-gallery">
+      <img src="\a3f07998-eaba-4919-8495-6016a00eab6d.jfif" alt=" súng 1">
+      <img src="\a4dfec99-7a15-4bb7-b809-e69188131368.jfif" alt=" súng 2">
     </div>
   </section>
 
-  <section>
-    <h2>Video Highlight</h2>
+  <!-- Combo Nhân Vật -->
+  <section class="combo-section">
+    <h2>🧠 Combo Nhân Vật Yêu Thích</h2>
+    <div class="combo-gallery">
+      <img src="\ce538799-e60f-4fda-8ae4-99ef7111bc26.jfif" alt="Nhân vật 1">
+      <img src="\a7f76371-98cc-48de-9612-07d23d86f616.jfif" alt="Nhân vật 2">
+      <img src="\7d59aee8-3aa6-4f01-b6c7-30e499112659.jfif" alt="Nhân vật 3">
+      <img src="\57aa2230-d583-4f41-82aa-17b8d4ce3ddf.jfif" alt="Nhân vật 4">
+    </div>
+  </section>
 
-    <!-- Video 1 -->
+  <div class="highlight">
+    <h2>🎮 Video Highlight Tuyển Thủ</h2>
     <video controls>
-      <source src="Enter%20(1).mp4" type="video/mp4">
-     
+      <source src="\Enter%20(2).mp4" type="video/mp4">
     </video>
-
-    <!-- Video 2 -->
-    <video controls>
-      <source src="Enter.mp4" type="video/mp4">
-      
-    </video>
-
-    <p style="text-align:center;">Những pha xử lý kỹ thuật và bàn thắng đẳng cấp của cầu thủ.</p>
-  </section>
-
-  <section>
-    <h2>Trận đấu gần đây</h2>
-    <img src="9c076f49-0d98-489a-a3a0-aa1ea70140d9.jfif" >
-    <img src="bdc3062e-3867-4db4-ab4b-3d97b672f03b.jfif" >
-  </section>
-
-  <section>
-    <h2>Thông tin liên lạc cầu thủ </h2>
-    <p>Email: <a href="mailto:viet69fc@gmail.com">thpfc@gmail.com</a></p>
-    <p>Facebook: <a href="https://www.facebook.com/tri.uc.807625" target="_blank">facebook.com/thp</a></p>
-  </section>
+  </div>
 
   <footer>
-    © 2025 VIET69 FC - Thiết kế bởi đội phát triển
+    © 2025 TEAM CVE | Thiết kế bởi NGUYỄN TRÍ ĐỨC
   </footer>
 
 </body>
 </html>
-
-
