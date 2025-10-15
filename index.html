@@ -166,15 +166,40 @@
       transform: scale(1.05);
     }
 
-    .guns img {
-      width: 45%;
-      margin: 10px;
-    }
+    .guns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
 
-    .combo img {
-      width: 22%;
-      margin: 10px;
-    }
+.guns img {
+  width: 320px;              /* kích thước cố định đồng đều */
+  height: 180px;             /* hoặc có thể đổi thành 200px tùy ý */
+  object-fit: contain;       /* đảm bảo ảnh hiển thị đầy đủ, không cắt */
+  background-color: #000;    /* thêm nền đen để dễ nhìn khi ảnh không full khung */
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0,170,255,0.6);
+  transition: transform 0.3s ease;
+}
+
+/* --- Ảnh combo nhân vật --- */
+.combo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.combo img {
+  width: 200px;              /* kích thước đồng nhất */
+  height: 200px;
+  object-fit: contain;       /* hiển thị đủ toàn bộ nhân vật */
+  background-color: #000;    /* nền đen giúp ảnh không bị lộ viền trống */
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0,170,255,0.6);
+  transition: transform 0.3s ease;
+}
 
     footer {
       text-align: center;
