@@ -36,6 +36,26 @@
       opacity: 0.9;
     }
 
+    .start-btn {
+      background: #00aaff;
+      color: #000;
+      font-weight: 700;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 0 20px #00aaff;
+      transition: 0.3s;
+    }
+
+    .start-btn:hover {
+      background: #00ffff;
+      box-shadow: 0 0 30px #00ffff;
+      transform: scale(1.05);
+    }
+
     .profile {
       display: flex;
       flex-wrap: wrap;
@@ -46,12 +66,14 @@
       border-radius: 20px;
       box-shadow: 0 0 30px rgba(0, 170, 255, 0.3);
       overflow: hidden;
-      transition: 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
     }
 
-    .profile:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 40px rgba(0, 170, 255, 0.5);
+    .profile.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .profile-img {
@@ -74,112 +96,84 @@
     .profile-info h2 {
       color: #00aaff;
       font-size: 2.3em;
-      margin-bottom: 10px;
+      margin-bottom: 25px;
       text-shadow: 0 0 15px #00aaff;
     }
 
-    /* Tên thật nổi bật */
-    .realname {
-      font-size: 1.2em;
-      color: #00ffff;
-      background: linear-gradient(90deg, rgba(0,255,255,0.2), rgba(0,123,255,0.2));
-      padding: 8px 15px;
-      border-radius: 8px;
-      display: inline-block;
-      box-shadow: 0 0 15px rgba(0,255,255,0.4);
-      text-shadow: 0 0 8px #00ffff;
-      letter-spacing: 1px;
-      font-weight: 600;
-      margin-bottom: 25px;
-      animation: pulse 2.5s infinite ease-in-out;
-    }
-
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 15px rgba(0,255,255,0.4); }
-      50% { box-shadow: 0 0 30px rgba(0,170,255,0.8); }
-    }
-
-    .profile-info p {
-      font-size: 1.1em;
-      line-height: 1.8;
-      margin-bottom: 15px;
+    /* --- Căn thẳng hàng và gạch nối sáng --- */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 180px auto;
+      row-gap: 15px;
+      column-gap: 15px;
+      align-items: center;
     }
 
     .label {
-      color: #00ffff;
-      font-weight: 700;
-      text-shadow: 0 0 8px #00ffff, 0 0 15px #007bff;
-      background: linear-gradient(90deg, rgba(0,255,255,0.1), rgba(0,123,255,0.1));
-      padding: 4px 8px;
-      border-radius: 5px;
-      border: 1px solid rgba(0,255,255,0.2);
-      animation: glow 2s ease-in-out infinite;
-    }
-
-    @keyframes glow {
-      0%, 100% { text-shadow: 0 0 8px #00ffff, 0 0 15px #007bff; }
-      50% { text-shadow: 0 0 15px #00ccff, 0 0 30px #00aaff; }
-    }
-
-    /* Phần combo */
-    .combo-section {
-      max-width: 1000px;
-      margin: 60px auto;
-      text-align: center;
-    }
-
-    .combo-section h2 {
-      color: #00aaff;
-      text-shadow: 0 0 10px #00aaff;
-      margin-bottom: 25px;
-      font-size: 1.8em;
-    }
-
-    .combo-gallery {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-    }
-
-    .combo-gallery img {
-      width: 230px;
-      height: 230px;
-      object-fit: cover;
-      border-radius: 15px;
-      border: 2px solid rgba(0,170,255,0.5);
-      box-shadow: 0 0 20px rgba(0,170,255,0.4);
-      transition: 0.3s;
-    }
-
-    .combo-gallery img {
-  width: 230px;
-  height: 230px;
-  object-fit: contain; /* giữ nguyên tỉ lệ ảnh, không bị cắt */
-  background: rgba(0, 0, 0, 0.5); /* thêm nền tối sau ảnh cho đẹp */
-  border-radius: 15px;
-  border: 2px solid rgba(0,170,255,0.5);
-  box-shadow: 0 0 20px rgba(0,170,255,0.4);
-  transition: 0.3s;
+  text-align: right;
+  font-weight: 700;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff, 0 0 15px #007bff;
+  background: none;
+  border: none;
+  padding-right: 10px;
 }
 
-    .highlight {
-      text-align: center;
-      margin-top: 60px;
+.label::after {
+  content: ":"; /* thay gạch bằng dấu hai chấm */
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff, 0 0 15px #007bff;
+  margin-left: 5px; /* cách nhẹ chữ một chút */
+}
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
     }
 
-    .highlight h2 {
+    .info-grid span.value {
+      color: #e0f8ff;
+      font-size: 1.05em;
+    }
+
+    section {
+      text-align: center;
+      margin-top: 60px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2 {
       color: #00aaff;
       margin-bottom: 20px;
       font-size: 1.8em;
       text-shadow: 0 0 10px #00aaff;
     }
 
-    video {
-      width: 80%;
-      max-width: 700px;
+    .highlight img, .guns img, .combo img {
       border-radius: 15px;
       box-shadow: 0 0 25px rgba(0,170,255,0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .highlight img:hover, .guns img:hover, .combo img:hover {
+      transform: scale(1.05);
+    }
+
+    .guns img {
+      width: 45%;
+      margin: 10px;
+    }
+
+    .combo img {
+      width: 22%;
+      margin: 10px;
     }
 
     footer {
@@ -199,9 +193,10 @@
       .profile-info {
         padding: 25px;
       }
-      .combo-gallery img {
-        width: 150px;
-        height: 150px;
+      .guns img { width: 80%; }
+      .combo img { width: 45%; }
+      .info-grid {
+        grid-template-columns: 130px auto;
       }
     }
   </style>
@@ -211,54 +206,71 @@
   <header>
     <h1>HỒ SƠ TUYỂN THỦ</h1>
     <p>ANTI CỨNG ĐỘ MIXI VÀ TEAM REFUND GAMING</p>
+    <button class="start-btn" onclick="startExperience()">LÀ ANTI ĐỘ MIXI BẤM VÀO ĐỂ XEM</button>
   </header>
 
-  <section class="profile">
+  <audio id="bgMusic" loop>
+    <source src="QNT%20h%C3%A0i%20thi%E1%BB%87t%20=))).mp3" type="audio/mpeg">
+  </audio>
+
+  <section class="profile" id="profile">
     <div class="profile-img">
-      <img src="\f779180e-23d7-4359-a331-4fe991df8ce6.jfif" alt="Ảnh tuyển thủ">
+      <img src="e8a1c31e-b245-440a-872c-10a0c457ed18.png" alt="Ảnh tuyển thủ WAG">
     </div>
+
     <div class="profile-info">
-      <h2>CVE ANH TÚ</h2>
-      <div class="realname">Tên thật: Nguyễn Anh Tú</div>
+      <h2>🔥 PTE DUY KHÁNH 🔥</h2>
 
-      <p><span class="label">Tuổi:</span> 15</p>
-      <p><span class="label">Vị trí:</span> RUSHER</p>
-      <p><span class="label">Phong cách chơi:</span> Tốc chiến, phản xạ cao, kĩ năng căng, tư duy chiến thuật nhạy bén.</p>
-      <p><span class="label">Thành tích nổi bật:</span> TOP 1 FREE FIRE K42 CHV (Tự Phong)</p>
-      <p><span class="label">Châm ngôn:</span> “THẰNG TÂY NGỒI CẠNH THẰNG TÀY / THẰNG TÂY BỎ VỢ THẰNG TÀY BỎ CHA” ⚡</p>
+      <div class="info-grid">
+        <span class="label">🧠 Tên thật:</span><span class="value">Nguyễn Duy Khánh</span>
+        <span class="label">🎂 Tuổi:</span><span class="value">16</span>
+        <span class="label">🎯 Vị trí:</span><span class="value">Support</span>
+        <span class="label">⚙️ Phong cách chơi:</span><span class="value">Support chiến thuật – bảo kê, call team và kiểm soát thế trận.</span>
+        <span class="label">🏆 Thành tích nổi bật:</span><span class="value">TOP 2 Giải Cỏ ở Việt Trì Phú Thọ.</span>
+        <span class="label">🚀 Mục tiêu:</span><span class="value">Trở thành top 1 SP Free Fire và chủ cộng đồng anti "Độ Mixi".</span>
+        <span class="label">💬 Châm ngôn:</span><span class="value">“Thằng Tây ngồi cạnh thằng Tày — Thằng Tây bỏ vợ, thằng Tày bỏ cha.” ⚡</span>
+      </div>
     </div>
   </section>
 
-  <!-- Combo Súng -->
-  <section class="combo-section">
-    <h2>🔫 Combo Súng Yêu Thích</h2>
-    <div class="combo-gallery">
-      <img src="\a3f07998-eaba-4919-8495-6016a00eab6d.jfif" alt=" súng 1">
-      <img src="\a4dfec99-7a15-4bb7-b809-e69188131368.jfif" alt=" súng 2">
-    </div>
+  <section class="guns" id="guns">
+    <h2>🔫 Vũ Khí Yêu Thích</h2>
+    <img src="Screenshot%202025-10-14%20222331.png" alt="Súng yêu thích 1">
+    <img src="Screenshot%202025-10-14%20222526.png" alt="Súng yêu thích 2">
   </section>
 
-  <!-- Combo Nhân Vật -->
-  <section class="combo-section">
-    <h2>🧠 Combo Nhân Vật Yêu Thích</h2>
-    <div class="combo-gallery">
-      <img src="\ce538799-e60f-4fda-8ae4-99ef7111bc26.jfif" alt="Nhân vật 1">
-      <img src="\a7f76371-98cc-48de-9612-07d23d86f616.jfif" alt="Nhân vật 2">
-      <img src="\7d59aee8-3aa6-4f01-b6c7-30e499112659.jfif" alt="Nhân vật 3">
-      <img src="\57aa2230-d583-4f41-82aa-17b8d4ce3ddf.jfif" alt="Nhân vật 4">
-    </div>
+  <section class="combo" id="combo">
+    <h2>⚡ Combo Nhân Vật</h2>
+    <img src="Screenshot%202025-10-14%20221959.png" alt=" nhân vật 1">
+    <img src="Screenshot%202025-10-14%20222031.png" alt=" nhân vật 2">
+    <img src="Screenshot%202025-10-14%20222144.png" alt=" nhân vật 3">
+    <img src="Screenshot%202025-10-14%20222248.png" alt=" nhân vật 4">
   </section>
 
-  <div class="highlight">
-    <h2>🎮 Video Highlight Tuyển Thủ</h2>
-    <video controls>
-      <source src="\Enter%20(2).mp4" type="video/mp4">
-    </video>
-  </div>
+  <section class="highlight" id="highlight">
+    <h2>🎮 Ảnh Nick Game</h2>
+    <img src="4378ea15-640b-4012-9b4c-732fbc414a63.jfif" alt="Ảnh nick game" width="80%">
+  </section>
 
   <footer>
-    © 2025 TEAM CVE | Thiết kế bởi NGUYỄN TRÍ ĐỨC
+    © 2025 TEAM WAG | Thiết kế bởi Fan Free Fire Việt Nam
   </footer>
+
+  <script>
+    function startExperience() {
+      const music = document.getElementById('bgMusic');
+      const profile = document.getElementById('profile');
+      const highlight = document.getElementById('highlight');
+      const guns = document.getElementById('guns');
+      const combo = document.getElementById('combo');
+      music.play();
+      profile.classList.add('show');
+      highlight.classList.add('show');
+      guns.classList.add('show');
+      combo.classList.add('show');
+      document.querySelector('.start-btn').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
