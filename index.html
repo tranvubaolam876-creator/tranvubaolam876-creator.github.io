@@ -36,26 +36,7 @@
       opacity: 0.9;
     }
 
-    .start-btn {
-      background: #00aaff;
-      color: #000;
-      font-weight: 700;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-size: 1em;
-      cursor: pointer;
-      margin-top: 20px;
-      box-shadow: 0 0 20px #00aaff;
-      transition: 0.3s;
-    }
-
-    .start-btn:hover {
-      background: #00ffff;
-      box-shadow: 0 0 30px #00ffff;
-      transform: scale(1.05);
-    }
-
+    /* --- Hồ sơ --- */
     .profile {
       display: flex;
       flex-wrap: wrap;
@@ -100,7 +81,6 @@
       text-shadow: 0 0 15px #00aaff;
     }
 
-    /* --- Căn thẳng hàng và gạch nối sáng --- */
     .info-grid {
       display: grid;
       grid-template-columns: 180px auto;
@@ -110,25 +90,16 @@
     }
 
     .label {
-  text-align: right;
-  font-weight: 700;
-  color: #00ffff;
-  text-shadow: 0 0 8px #00ffff, 0 0 15px #007bff;
-  background: none;
-  border: none;
-  padding-right: 10px;
-}
+      text-align: right;
+      font-weight: 700;
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffff, 0 0 15px #007bff;
+      padding-right: 10px;
+    }
 
-.label::after {
-  content: ":"; /* thay gạch bằng dấu hai chấm */
-  color: #00ffff;
-  text-shadow: 0 0 8px #00ffff, 0 0 15px #007bff;
-  margin-left: 5px; /* cách nhẹ chữ một chút */
-}
-
-    @keyframes pulse {
-      0%, 100% { opacity: 0.7; }
-      50% { opacity: 1; }
+    .label::after {
+      content: ":";
+      margin-left: 5px;
     }
 
     .info-grid span.value {
@@ -166,40 +137,28 @@
       transform: scale(1.05);
     }
 
-    .guns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
+    .guns, .combo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
 
-.guns img {
-  width: 320px;              /* kích thước cố định đồng đều */
-  height: 180px;             /* hoặc có thể đổi thành 200px tùy ý */
-  object-fit: contain;       /* đảm bảo ảnh hiển thị đầy đủ, không cắt */
-  background-color: #000;    /* thêm nền đen để dễ nhìn khi ảnh không full khung */
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0,170,255,0.6);
-  transition: transform 0.3s ease;
-}
+    .guns img {
+      width: 320px;
+      height: 180px;
+      object-fit: contain;
+      background-color: #000;
+      border-radius: 15px;
+    }
 
-/* --- Ảnh combo nhân vật --- */
-.combo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.combo img {
-  width: 200px;              /* kích thước đồng nhất */
-  height: 200px;
-  object-fit: contain;       /* hiển thị đủ toàn bộ nhân vật */
-  background-color: #000;    /* nền đen giúp ảnh không bị lộ viền trống */
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0,170,255,0.6);
-  transition: transform 0.3s ease;
-}
+    .combo img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      background-color: #000;
+      border-radius: 15px;
+    }
 
     footer {
       text-align: center;
@@ -210,20 +169,6 @@
       margin-top: 50px;
       box-shadow: 0 -2px 15px rgba(0,170,255,0.2);
     }
-
-    @media (max-width: 768px) {
-      .profile {
-        flex-direction: column;
-      }
-      .profile-info {
-        padding: 25px;
-      }
-      .guns img { width: 80%; }
-      .combo img { width: 45%; }
-      .info-grid {
-        grid-template-columns: 130px auto;
-      }
-    }
   </style>
 </head>
 <body>
@@ -233,8 +178,6 @@
     <p>ANTI CỨNG ĐỘ MIXI VÀ TEAM REFUND GAMING</p>
   </header>
 
- 
-
   <section class="profile" id="profile">
     <div class="profile-img">
       <img src="e8a1c31e-b245-440a-872c-10a0c457ed18.png" alt="Ảnh tuyển thủ WAG">
@@ -242,15 +185,14 @@
 
     <div class="profile-info">
       <h2>🔥 PTE DUY KHÁNH 🔥</h2>
-
       <div class="info-grid">
-        <span class="label">🧠 Tên thật:</span><span class="value">Nguyễn Duy Khánh</span>
-        <span class="label">🎂 Tuổi:</span><span class="value">16</span>
-        <span class="label">🎯 Vị trí:</span><span class="value">Support</span>
-        <span class="label">⚙️ Phong cách chơi:</span><span class="value">Support chiến thuật – bảo kê, call team và kiểm soát thế trận.</span>
-        <span class="label">🏆 Thành tích nổi bật:</span><span class="value">TOP 2 Giải Cỏ ở Việt Trì Phú Thọ.</span>
-        <span class="label">🚀 Mục tiêu:</span><span class="value">Trở thành top 1 SP Free Fire và chủ cộng đồng anti "Độ Mixi".</span>
-        <span class="label">💬 Châm ngôn:</span><span class="value">“Thằng Tây ngồi cạnh thằng Tày — Thằng Tây bỏ vợ, thằng Tày bỏ cha.” ⚡</span>
+        <span class="label">🧠 Tên thật</span><span class="value">Nguyễn Duy Khánh</span>
+        <span class="label">🎂 Tuổi</span><span class="value">16</span>
+        <span class="label">🎯 Vị trí</span><span class="value">Support</span>
+        <span class="label">⚙️ Phong cách chơi</span><span class="value">Support chiến thuật – bảo kê, call team và kiểm soát thế trận.</span>
+        <span class="label">🏆 Thành tích</span><span class="value">TOP 2 Giải Cỏ ở Việt Trì Phú Thọ.</span>
+        <span class="label">🚀 Mục tiêu</span><span class="value">Trở thành top 1 SP Free Fire và chủ cộng đồng anti "Độ Mixi".</span>
+        <span class="label">💬 Châm ngôn</span><span class="value">“Thằng Tây ngồi cạnh thằng Tày — Thằng Tây bỏ vợ, thằng Tày bỏ cha.” ⚡</span>
       </div>
     </div>
   </section>
@@ -279,21 +221,13 @@
   </footer>
 
   <script>
-    function startExperience() {
-      const music = document.getElementById('bgMusic');
-      const profile = document.getElementById('profile');
-      const highlight = document.getElementById('highlight');
-      const guns = document.getElementById('guns');
-      const combo = document.getElementById('combo');
-      music.play();
-      profile.classList.add('show');
-      highlight.classList.add('show');
-      guns.classList.add('show');
-      combo.classList.add('show');
-      document.querySelector('.start-btn').style.display = 'none';
-    }
+    // Khi trang load, tự kích hoạt hiệu ứng hiện hồ sơ
+    window.addEventListener("load", () => {
+      const sections = document.querySelectorAll(".profile, .guns, .combo, .highlight");
+      sections.forEach((el, index) => {
+        setTimeout(() => el.classList.add("show"), 300 * index);
+      });
+    });
   </script>
-
 </body>
 </html>
-
